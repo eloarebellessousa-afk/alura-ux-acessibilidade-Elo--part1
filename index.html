@@ -1,171 +1,334 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clube da Música • Guia Interativo</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clube da Música • Plataforma Interativa</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Checkboxes funcionais para Acessibilidade -->
-    <input type="checkbox" id="chk-fonte" class="controle-oculto">
-    <input type="checkbox" id="chk-contraste" class="controle-oculto">
+<!-- Link de Acessibilidade -->
+<a href="#conteudo-principal" class="link-atalho">Pular para o conteúdo principal</a>
 
-    <div class="pagina-wrapper">
-        
-        <!-- Barra de Acessibilidade -->
-        <nav class="barra-acessibilidade">
-            <label for="chk-fonte" class="btn-acessibilidade">
-                🔍 Letras Maiores (A+)
-            </label>
-            <label for="chk-contraste" class="btn-acessibilidade">
-                👁️ Modo Alto Contraste
-            </label>
-        </nav>
+<!-- Gatilhos de Acessibilidade -->
+<input type="checkbox" id="chk-fonte" class="controle-oculto">
+<input type="checkbox" id="chk-contraste" class="controle-oculto">
 
-        <!-- Cabeçalho Animado -->
-        <header class="cabecalho">
-            <div class="icone-animado">🎵</div>
-            <h1>Clube da Música</h1>
-            <p class="subtitulo">Descubra o instrumento ideal para você e toque no seu próprio ritmo!</p>
-            
-            <div class="banner-beneficios">
-                <span class="selo-beneficio">🧠 Exercita a Memória</span>
-                <span class="selo-beneficio">🖐️ Fortalece as Mãos</span>
-                <span class="selo-beneficio">😊 Traz Alegria e Bem-Estar</span>
-            </div>
-        </header>
+<div class="pagina-wrapper">
 
-        <main class="grade-instrumentos">
+<!-- Barra de Acessibilidade Superior -->
+<nav class="barra-acessibilidade" aria-label="Acessibilidade">
+<label for="chk-fonte" class="btn-acessibilidade" tabindex="0" role="button">
+🔍 Letras Maiores (A+)
+</label>
+<label for="chk-contraste" class="btn-acessibilidade" tabindex="0" role="button">
+👁️ Alto Contraste
+</label>
+</nav>
 
-            <!-- CARD 1: VIOLÃO -->
-            <article class="card-instrumento">
-                <div class="tag-nivel facil">Nível: Fácil de Começar</div>
-                
-                <header class="card-cabecalho">
-                    <span class="emoji-instrumento">🎸</span>
-                    <div>
-                        <h2>Violão</h2>
-                        <span class="categoria">Instrumento de Cordas</span>
-                    </div>
-                </header>
+<!-- Cabeçalho Principal -->
+<header class="cabecalho">
+<div class="icone-animado" aria-hidden="true">🎵</div>
+<h1>Clube da Música</h1>
+<p class="subtitulo">Sua plataforma interativa para aprender, ouvir e escolher o instrumento musical ideal!</p>
 
-                <p class="descricao">
-                    O clássico das reuniões em família! Excelente para cantar junto e praticar a coordenação das mãos.
-                </p>
+<div class="banner-beneficios">
+<span class="selo-beneficio">🧠 Exercita a Memória</span>
+<span class="selo-beneficio">🖐️ Fortalece a Coordenação</span>
+<span class="selo-beneficio">😊 Traz Bem-Estar</span>
+</div>
+</header>
 
-                <!-- Áudio Nativo em OGG -->
-                <section class="bloco-audio">
-                    <label for="audio-violao" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
-                    <audio id="audio-violao" controls preload="none">
-                        <source src="som-violao.ogg" type="audio/ogg">
-                        Seu navegador não suporta este formato de áudio.
-                    </audio>
-                </section>
+<!-- SISTEMA DE NAVEGAÇÃO POR ABAS (CSS PURO) -->
+<div class="sistema-abas">
+<!-- Inputs para controlar qual aba está aberta -->
+<input type="radio" name="abas" id="aba-catalogo" class="controle-oculto" checked>
+<input type="radio" name="abas" id="aba-quiz" class="controle-oculto">
+<input type="radio" name="abas" id="aba-pratica" class="controle-oculto">
 
-                <details class="sanfona-info">
-                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
-                    <div class="conteudo-detalhes">
-                        <div class="secao-info dica-acessibilidade">
-                            <h3>💡 Dica de Ouro para Idosos:</h3>
-                            <p><strong>Use cordas de Nylon!</strong> Elas são muito mais macias que as de aço e não machucam os dedos.</p>
-                        </div>
-                        <div class="secao-info">
-                            <h3>🎯 Benefícios para a Saúde:</h3>
-                            <p>Ajuda a manter as articulações dos dedos flexíveis e fortalece a memória musical.</p>
-                        </div>
-                    </div>
-                </details>
-            </article>
+<!-- Botões das Abas -->
+<nav class="menu-abas" aria-label="Navegação Principal">
+<label for="aba-catalogo" class="btn-aba" tabindex="0">🎸 Catálogo de Som</label>
+<label for="aba-quiz" class="btn-aba" tabindex="0">🎯 Quiz Recomendador</label>
+<label for="aba-pratica" class="btn-aba" tabindex="0">🎹 Exercício Prático</label>
+</nav>
 
-            <!-- CARD 2: TECLADO -->
-            <article class="card-instrumento">
-                <div class="tag-nivel muito-facil">Nível: Muito Confortável</div>
-                
-                <header class="card-cabecalho">
-                    <span class="emoji-instrumento">🎹</span>
-                    <div>
-                        <h2>Teclado / Piano</h2>
-                        <span class="categoria">Instrumento de Teclas</span>
-                    </div>
-                </header>
+<!-- CONTEÚDO DA ABA 1: CATÁLOGO -->
+<section id="conteudo-principal" class="conteudo-aba secao-catalogo">
+<div class="grade-instrumentos">
 
-                <p class="descricao">
-                    Uma escolha incrível! O som sai com um leve toque nas teclas, sem precisar fazer força nas mãos.
-                </p>
+<!-- CARD 1: VIOLÃO -->
+<article class="card-instrumento">
+<div class="tag-nivel facil">Fácil de Começar</div>
 
-                <!-- Áudio Nativo em OGG -->
-                <section class="bloco-audio">
-                    <label for="audio-teclado" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
-                    <audio id="audio-teclado" controls preload="none">
-                        <source src="som-teclado.ogg" type="audio/ogg">
-                        Seu navegador não suporta este formato de áudio.
-                    </audio>
-                </section>
+<header class="card-cabecalho">
+<span class="emoji-instrumento" aria-hidden="true">🎸</span>
+<div>
+<h2>Violão</h2>
+<span class="categoria">Instrumento de Cordas</span>
+</div>
+</header>
 
-                <details class="sanfona-info">
-                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
-                    <div class="conteudo-detalhes">
-                        <div class="secao-info dica-acessibilidade">
-                            <h3>💡 Dica de Ouro para Idosos:</h3>
-                            <p><strong>Teclas Marcadas:</strong> Cole pequenos adesivos coloridos para encontrar as notas sem esforçar a vista.</p>
-                        </div>
-                        <div class="secao-info">
-                            <h3>🎯 Benefícios para a Saúde:</h3>
-                            <p>Estimula a coordenação motora usando as duas mãos e ativa os dois lados do cérebro.</p>
-                        </div>
-                    </div>
-                </details>
-            </article>
+<div class="etiquetas-caracteristicas">
+<span class="etiqueta">Acompanhamento</span>
+<span class="etiqueta">Voz & Canto</span>
+</div>
 
-            <!-- CARD 3: UKULELE -->
-            <article class="card-instrumento">
-                <div class="tag-nivel super-facil">Nível: Super Leve e Fácil</div>
+<!-- Avaliação Visual -->
+<div class="medidores">
+<div class="medidor-item">
+<span>Conforto nos Dedos:</span>
+<div class="barras"><span style="width: 70%"></span></div>
+</div>
+<div class="medidor-item">
+<span>Portabilidade:</span>
+<div class="barras"><span style="width: 80%"></span></div>
+</div>
+</div>
 
-                <header class="card-cabecalho">
-                    <span class="emoji-instrumento">🪕</span>
-                    <div>
-                        <h2>Ukulele</h2>
-                        <span class="categoria">Instrumento Havaiano</span>
-                    </div>
-                </header>
+<p class="descricao">
+O grande companheiro das reuniões em família! Ideal para quem gosta de cantar e acompanhar melodias marcantes.
+</p>
 
-                <p class="descricao">
-                    Pequeno, alegre e muito leve! Tem apenas 4 cordas e permite aprender uma música inteira em poucos dias.
-                </p>
+<!-- Áudio com Ondas Sonoras -->
+<section class="bloco-audio">
+<div class="cabecalho-audio">
+<label for="audio-violao" class="rotulo-audio">🎧 Ouça o som do Violão:</label>
+<div class="ondas-sonoras" aria-hidden="true">
+<span></span><span></span><span></span><span></span>
+</div>
+</div>
+<audio id="audio-violao" controls preload="none">
+<source src="som-violao.ogg" type="audio/ogg">
+Seu navegador não suporta este áudio.
+</audio>
+</section>
 
-                <!-- Áudio Nativo em OGG -->
-                <section class="bloco-audio">
-                    <label for="audio-ukulele" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
-                    <audio id="audio-ukulele" controls preload="none">
-                        <source src="som-ukulele.ogg" type="audio/ogg">
-                        Seu navegador não suporta este formato de áudio.
-                    </audio>
-                </section>
+<details class="sanfona-info">
+<summary class="btn-detalhes">✨ Dicas Práticas & Saúde</summary>
+<div class="conteudo-detalhes">
+<div class="secao-info dica-acessibilidade">
+<h3>💡 Dica de Ouro:</h3>
+<p>Prefira <strong>cordas de nylon</strong> no início. Elas diminuem a pressão necessária e evitam dores nos dedos.</p>
+</div>
+<div class="secao-info">
+<h3>🎯 Saúde das Mãos:</h3>
+<p>Trabalha o alongamento dos dedos e fortalece a aderência da mão.</p>
+</div>
+</div>
+</details>
+</article>
 
-                <details class="sanfona-info">
-                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
-                    <div class="conteudo-detalhes">
-                        <div class="secao-info dica-acessibilidade">
-                            <h3>💡 Dica de Ouro para Idosos:</h3>
-                            <p><strong>Toque no Colo:</strong> Por ser pequeno, você pode tocar sentado no sofá sem cansar os ombros ou o pescoço.</p>
-                        </div>
-                        <div class="secao-info">
-                            <h3>🎯 Benefícios para a Saúde:</h3>
-                            <p>Divertido e relaxante, reduz o estresse e traz sensação rápida de conquista!</p>
-                        </div>
-                    </div>
-                </details>
-            </article>
+<!-- CARD 2: TECLADO -->
+<article class="card-instrumento">
+<div class="tag-nivel muito-facil">Muito Confortável</div>
 
-        </main>
+<header class="card-cabecalho">
+<span class="emoji-instrumento" aria-hidden="true">🎹</span>
+<div>
+<h2>Teclado / Piano</h2>
+<span class="categoria">Instrumento de Teclas</span>
+</div>
+</header>
 
-        <footer class="rodape">
-            <p>🌟 <strong>Guia da Terceira Idade</strong> • Tocar um instrumento não tem idade!</p>
-        </footer>
+<div class="etiquetas-caracteristicas">
+<span class="etiqueta">Toque Suave</span>
+<span class="etiqueta">Versátil</span>
+</div>
 
-    </div>
+<div class="medidores">
+<div class="medidor-item">
+<span>Conforto nos Dedos:</span>
+<div class="barras"><span style="width: 100%"></span></div>
+</div>
+<div class="medidor-item">
+<span>Portabilidade:</span>
+<div class="barras"><span style="width: 60%"></span></div>
+</div>
+</div>
+
+<p class="descricao">
+Excelente para quem busca facilidade. O som sai limpo com apenas um toque leve nas teclas, sem exigir força.
+</p>
+
+<section class="bloco-audio">
+<div class="cabecalho-audio">
+<label for="audio-teclado" class="rotulo-audio">🎧 Ouça o som do Teclado:</label>
+<div class="ondas-sonoras" aria-hidden="true">
+<span></span><span></span><span></span><span></span>
+</div>
+</div>
+<audio id="audio-teclado" controls preload="none">
+<source src="som-teclado.ogg" type="audio/ogg">
+Seu navegador não suporta este áudio.
+</audio>
+</section>
+
+<details class="sanfona-info">
+<summary class="btn-detalhes">✨ Dicas Práticas & Saúde</summary>
+<div class="conteudo-detalhes">
+<div class="secao-info dica-acessibilidade">
+<h3>💡 Dica de Ouro:</h3>
+<p>Coloque <strong>adesivos coloridos</strong> nas teclas para identificar as notas musicais rapidamente.</p>
+</div>
+<div class="secao-info">
+<h3>🎯 Saúde Cerebral:</h3>
+<p>Ativa os dois hemisférios cerebrais simultaneamente ao coordenar a mão esquerda e a direita.</p>
+</div>
+</div>
+</details>
+</article>
+
+<!-- CARD 3: UKULELE -->
+<article class="card-instrumento">
+<div class="tag-nivel super-facil">Super Leve</div>
+
+<header class="card-cabecalho">
+<span class="emoji-instrumento" aria-hidden="true">🪕</span>
+<div>
+<h2>Ukulele</h2>
+<span class="categoria">Instrumento Havaiano</span>
+</div>
+</header>
+
+<div class="etiquetas-caracteristicas">
+<span class="etiqueta">Compacto</span>
+<span class="etiqueta">4 Cordas</span>
+</div>
+
+<div class="medidores">
+<div class="medidor-item">
+<span>Conforto nos Dedos:</span>
+<div class="barras"><span style="width: 90%"></span></div>
+</div>
+<div class="medidor-item">
+<span>Portabilidade:</span>
+<div class="barras"><span style="width: 100%"></span></div>
+</div>
+</div>
+
+<p class="descricao">
+Super leve, divertido e rápido de aprender! Possui apenas 4 cordas de nylon e cabe facilmente em qualquer lugar.
+</p>
+
+<section class="bloco-audio">
+<div class="cabecalho-audio">
+<label for="audio-ukulele" class="rotulo-audio">🎧 Ouça o som do Ukulele:</label>
+<div class="ondas-sonoras" aria-hidden="true">
+<span></span><span></span><span></span><span></span>
+</div>
+</div>
+<audio id="audio-ukulele" controls preload="none">
+<source src="som-ukulele.ogg" type="audio/ogg">
+Seu navegador não suporta este áudio.
+</audio>
+</section>
+
+<details class="sanfona-info">
+<summary class="btn-detalhes">✨ Dicas Práticas & Saúde</summary>
+<div class="conteudo-detalhes">
+<div class="secao-info dica-acessibilidade">
+<h3>💡 Dica de Ouro:</h3>
+<p>Toque apoiado no colo enquanto assiste TV ou relaxa no sofá, sem cansar braços ou ombros.</p>
+</div>
+<div class="secao-info">
+<h3>🎯 Saúde Emocional:</h3>
+<p>O som alegre do Ukulele é excelente para aliviar o estresse e trazer sensação de bem-estar rápida.</p>
+</div>
+</div>
+</details>
+</article>
+
+</div>
+</section>
+
+<!-- CONTEÚDO DA ABA 2: QUIZ INTERATIVO -->
+<section class="conteudo-aba secao-quiz-aba">
+<div class="caixa-interativa">
+<h2>🎯 Qual o instrumento perfeito para o seu momento?</h2>
+<p>Responda à pergunta abaixo para receber a nossa recomendação:</p>
+
+<div class="quiz-container">
+<input type="radio" name="quiz" id="res-violao" class="controle-oculto">
+<input type="radio" name="quiz" id="res-teclado" class="controle-oculto">
+<input type="radio" name="quiz" id="res-ukulele" class="controle-oculto">
+
+<div class="quiz-opcoes">
+<label for="res-violao" class="btn-opcao" tabindex="0">
+🗣️ Quero cantar músicas conhecidas acompanhando com acordes.
+</label>
+<label for="res-teclado" class="btn-opcao" tabindex="0">
+🎹 Prefiro tocar sentado confortavelmente com toques leves e sem fazer força.
+</label>
+<label for="res-ukulele" class="btn-opcao" tabindex="0">
+🏖️ Quero algo super leve, pequeno e fácil de levar para qualquer lugar.
+</label>
+</div>
+
+<!-- Respostas do Quiz -->
+<div class="resposta-card resultado-violao">
+<span class="resposta-icone">🎸</span>
+<div>
+<h3>Seu instrumento ideal é o **Violão**!</h3>
+<p>Ele é versátil, ótimo para rodas de conversa e perfeito para acompanhar quem gosta de cantar junto.</p>
+</div>
+</div>
+
+<div class="resposta-card resultado-teclado">
+<span class="resposta-icone">🎹</span>
+<div>
+<h3>Seu instrumento ideal é o **Teclado**!</h3>
+<p>Extremamente confortável, permite tocar lindas músicas sem causar esforço nas articulações dos dedos.</p>
+</div>
+</div>
+
+<div class="resposta-card resultado-ukulele">
+<span class="resposta-icone">🪕</span>
+<div>
+<h3>Seu instrumento ideal é o **Ukulele**!</h3>
+<p>Alegre e levinho, você aprenderá suas primeiras músicas em poucos dias de treino simples.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTEÚDO DA ABA 3: EXERCÍCIO PRÁTICO -->
+<section class="conteudo-aba secao-pratica-aba">
+<div class="caixa-interativa">
+<h2>🎹 Treino Visual: Conhecendo as Notas do Teclado</h2>
+<p>Passe o mouse ou toque nas teclas abaixo para visualizar o nome e a posição das notas principais no teclado:</p>
+
+<!-- Mini Teclado Visual CSS -->
+<div class="teclado-visual" aria-label="Teclado demonstrativo">
+<div class="tecla branca" tabindex="0"><span>DÓ</span></div>
+<div class="tecla preta"></div>
+<div class="tecla branca" tabindex="0"><span>RÉ</span></div>
+<div class="tecla preta"></div>
+<div class="tecla branca" tabindex="0"><span>MI</span></div>
+<div class="tecla branca" tabindex="0"><span>FÁ</span></div>
+<div class="tecla preta"></div>
+<div class="tecla branca" tabindex="0"><span>SOL</span></div>
+<div class="tecla preta"></div>
+<div class="tecla branca" tabindex="0"><span>LÁ</span></div>
+<div class="tecla preta"></div>
+<div class="tecla branca" tabindex="0"><span>SI</span></div>
+</div>
+
+<div class="painel-dica">
+<strong>💡 Exercício de Memória:</strong> Tente memorizar a sequência <em>DÓ - RÉ - MI - FÁ - SOL - LÁ - SI</em>. Ela é a base para todos os instrumentos!
+</div>
+</div>
+</section>
+
+</div>
+
+<footer class="rodape">
+<p>🌟 <strong>Clube da Música</strong> • Cultivando a arte, a memória e a saúde em qualquer idade.</p>
+</footer>
+
+</div>
 
 </body>
 </html>
