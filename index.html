@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube da Música • Guia Interativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Checkboxes funcionais para Acessibilidade -->
+    <input type="checkbox" id="chk-fonte" class="controle-oculto">
+    <input type="checkbox" id="chk-contraste" class="controle-oculto">
+
+    <div class="pagina-wrapper">
+        
+        <!-- Barra de Acessibilidade -->
+        <nav class="barra-acessibilidade">
+            <label for="chk-fonte" class="btn-acessibilidade">
+                🔍 Letras Maiores (A+)
+            </label>
+            <label for="chk-contraste" class="btn-acessibilidade">
+                👁️ Modo Alto Contraste
+            </label>
+        </nav>
+
+        <!-- Cabeçalho Animado -->
+        <header class="cabecalho">
+            <div class="icone-animado">🎵</div>
+            <h1>Clube da Música</h1>
+            <p class="subtitulo">Descubra o instrumento ideal para você e toque no seu próprio ritmo!</p>
+            
+            <div class="banner-beneficios">
+                <span class="selo-beneficio">🧠 Exercita a Memória</span>
+                <span class="selo-beneficio">🖐️ Fortalece as Mãos</span>
+                <span class="selo-beneficio">😊 Traz Alegria e Bem-Estar</span>
+            </div>
+        </header>
+
+        <main class="grade-instrumentos">
+
+            <!-- CARD 1: VIOLÃO -->
+            <article class="card-instrumento">
+                <div class="tag-nivel facil">Nível: Fácil de Começar</div>
+                
+                <header class="card-cabecalho">
+                    <span class="emoji-instrumento">🎸</span>
+                    <div>
+                        <h2>Violão</h2>
+                        <span class="categoria">Instrumento de Cordas</span>
+                    </div>
+                </header>
+
+                <p class="descricao">
+                    O clássico das reuniões em família! Excelente para cantar junto e praticar a coordenação das mãos.
+                </p>
+
+                <!-- Áudio Nativo em OGG -->
+                <section class="bloco-audio">
+                    <label for="audio-violao" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
+                    <audio id="audio-violao" controls preload="none">
+                        <source src="som-violao.ogg" type="audio/ogg">
+                        Seu navegador não suporta este formato de áudio.
+                    </audio>
+                </section>
+
+                <details class="sanfona-info">
+                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
+                    <div class="conteudo-detalhes">
+                        <div class="secao-info dica-acessibilidade">
+                            <h3>💡 Dica de Ouro para Idosos:</h3>
+                            <p><strong>Use cordas de Nylon!</strong> Elas são muito mais macias que as de aço e não machucam os dedos.</p>
+                        </div>
+                        <div class="secao-info">
+                            <h3>🎯 Benefícios para a Saúde:</h3>
+                            <p>Ajuda a manter as articulações dos dedos flexíveis e fortalece a memória musical.</p>
+                        </div>
+                    </div>
+                </details>
+            </article>
+
+            <!-- CARD 2: TECLADO -->
+            <article class="card-instrumento">
+                <div class="tag-nivel muito-facil">Nível: Muito Confortável</div>
+                
+                <header class="card-cabecalho">
+                    <span class="emoji-instrumento">🎹</span>
+                    <div>
+                        <h2>Teclado / Piano</h2>
+                        <span class="categoria">Instrumento de Teclas</span>
+                    </div>
+                </header>
+
+                <p class="descricao">
+                    Uma escolha incrível! O som sai com um leve toque nas teclas, sem precisar fazer força nas mãos.
+                </p>
+
+                <!-- Áudio Nativo em OGG -->
+                <section class="bloco-audio">
+                    <label for="audio-teclado" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
+                    <audio id="audio-teclado" controls preload="none">
+                        <source src="som-teclado.ogg" type="audio/ogg">
+                        Seu navegador não suporta este formato de áudio.
+                    </audio>
+                </section>
+
+                <details class="sanfona-info">
+                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
+                    <div class="conteudo-detalhes">
+                        <div class="secao-info dica-acessibilidade">
+                            <h3>💡 Dica de Ouro para Idosos:</h3>
+                            <p><strong>Teclas Marcadas:</strong> Cole pequenos adesivos coloridos para encontrar as notas sem esforçar a vista.</p>
+                        </div>
+                        <div class="secao-info">
+                            <h3>🎯 Benefícios para a Saúde:</h3>
+                            <p>Estimula a coordenação motora usando as duas mãos e ativa os dois lados do cérebro.</p>
+                        </div>
+                    </div>
+                </details>
+            </article>
+
+            <!-- CARD 3: UKULELE -->
+            <article class="card-instrumento">
+                <div class="tag-nivel super-facil">Nível: Super Leve e Fácil</div>
+
+                <header class="card-cabecalho">
+                    <span class="emoji-instrumento">🪕</span>
+                    <div>
+                        <h2>Ukulele</h2>
+                        <span class="categoria">Instrumento Havaiano</span>
+                    </div>
+                </header>
+
+                <p class="descricao">
+                    Pequeno, alegre e muito leve! Tem apenas 4 cordas e permite aprender uma música inteira em poucos dias.
+                </p>
+
+                <!-- Áudio Nativo em OGG -->
+                <section class="bloco-audio">
+                    <label for="audio-ukulele" class="rotulo-audio">🎧 Clique no play para ouvir o som:</label>
+                    <audio id="audio-ukulele" controls preload="none">
+                        <source src="som-ukulele.ogg" type="audio/ogg">
+                        Seu navegador não suporta este formato de áudio.
+                    </audio>
+                </section>
+
+                <details class="sanfona-info">
+                    <summary class="btn-detalhes">✨ Ver Dicas de Ouro & Benefícios</summary>
+                    <div class="conteudo-detalhes">
+                        <div class="secao-info dica-acessibilidade">
+                            <h3>💡 Dica de Ouro para Idosos:</h3>
+                            <p><strong>Toque no Colo:</strong> Por ser pequeno, você pode tocar sentado no sofá sem cansar os ombros ou o pescoço.</p>
+                        </div>
+                        <div class="secao-info">
+                            <h3>🎯 Benefícios para a Saúde:</h3>
+                            <p>Divertido e relaxante, reduz o estresse e traz sensação rápida de conquista!</p>
+                        </div>
+                    </div>
+                </details>
+            </article>
+
+        </main>
+
+        <footer class="rodape">
+            <p>🌟 <strong>Guia da Terceira Idade</strong> • Tocar um instrumento não tem idade!</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
