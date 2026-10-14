@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Violão • Aprofundamento do Tema</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  body {
+    background-color: #000000 !important;
+    color: #ffffff;
+  }
+  #bg-canvas-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: #000000;
+  }
+  .container-detalhado {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .card-painel {
+    background: rgba(18, 18, 18, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 35px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    margin-bottom: 25px;
+  }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  }
+  .btn-voltar:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+  }
+  .figura-tema {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .figura-tema svg {
+    max-width: 220px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(37, 99, 235, 0.6));
+  }
+  h1 {
+    color: #3b82f6;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+  .subtitulo-tema {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #60a5fa;
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 6px;
+  }
+  p, li {
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  .caixa-destaque {
+    background: rgba(37, 99, 235, 0.15);
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas-3d"></canvas>
+
+<div class="container-detalhado">
+  <a href="index.html" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+
+  <article class="card-painel">
+    <h1>🎸 Violão: História, Técnica e Benefícios</h1>
+    <p class="subtitulo-tema">Aprofunde-se no instrumento mais popular e versátil da música do mundo.</p>
+
+    <!-- Figura Ilustrativa SVG (Violão) -->
+    <div class="figura-tema">
+      <svg viewBox="0 0 100 200" width="160" height="200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10 C40 10 35 30 40 60 C30 80 20 110 30 140 C40 170 60 170 70 140 C80 110 70 80 60 60 C65 30 60 10 50 10 Z" fill="#b45309" stroke="#f59e0b" stroke-width="2"/>
+        <circle cx="50" cy="110" r="14" fill="#000000" stroke="#f59e0b" stroke-width="2"/>
+        <rect x="47" y="10" width="6" height="150" fill="#78350f"/>
+        <line x1="48" y1="10" x2="48" y2="160" stroke="#ffffff" stroke-width="0.8"/>
+        <line x1="49" y1="10" x2="49" y2="160" stroke="#ffffff" stroke-width="0.8"/>
+        <line x1="50" y1="10" x2="50" y2="160" stroke="#ffffff" stroke-width="0.8"/>
+        <line x1="51" y1="10" x2="51" y2="160" stroke="#ffffff" stroke-width="0.8"/>
+        <line x1="52" y1="10" x2="52" y2="160" stroke="#ffffff" stroke-width="0.8"/>
+      </svg>
+    </div>
+
+    <h2>1. Origem e Evolução Histórica</h2>
+    <p>O violão moderno deriva de antigos instrumentos de cordas dedilhadas como a alaúde e a vihuela europeia dos séculos XV e XVI. A configuração atual de seis cordas e o formato da caixa harmônica consolidaram-se na Espanha durante o século XIX, graças ao lendário luthier <strong>Antonio de Torres</strong>.</p>
+
+    <h2>2. Tipos de Corda e Escolha Inicial</h2>
+    <ul>
+      <li><strong>Nylon:</strong> Recomendado para iniciantes, MPB, bossa nova e música clássica. As cordas são mais macias, o que reduz significativamente a sensibilidade inicial nos dedos.</li>
+      <li><strong>Aço:</strong> Muito utilizado no Pop, Rock, Folk e Sertanejo. Entrega um tom brilhante, estridente e com grande projeção de volume acústico.</li>
+    </ul>
+
+    <div class="caixa-destaque">
+      <strong>💡 Afinação Padrão:</strong> Das cordas mais graves para as mais agudas: <strong>Mi (E) - Lá (A) - Ré (D) - Sol (G) - Si (B) - Mi (E)</strong>.
+    </div>
+
+    <h2>3. Anatomia Harmônica do Violão</h2>
+    <p>Composto pela <em>caixa de ressonância</em> (que amplifica o som naturally), <em>braço</em>, <em>trastes</em> (divisões metálicas que definem as notas), <em>cavalete</em> e <em>tarraxas</em> de afinação. Cada ponto de pressão do dedo altera o comprimento da corda vibrante, gerando notas distintas.</p>
+
+    <h2>4. Benefícios Físicos e Cognitivos</h2>
+    <ul>
+      <li><strong>Coordenação Fina:</strong> Exige movimentações independentes entre a mão esquerda (formação de acordes) e mão direita (ritmo/dedilhado).</li>
+      <li><strong>Memória Ativa:</strong> Tocar músicas exercita o resgate rápido de mapas mentais de posições de dedos e sequências harmónicas.</li>
+      <li><strong>Saúde Mental:</strong> Funciona como uma excelente válvula de escape para o estresse diário, promovendo relaxamento.</li>
+    </ul>
+  </article>
+</div>
+
+<!-- Fundo 3D Geométrico (Three.js) -->
+<script>
+window.addEventListener('load', function() {
+  const canvas = document.getElementById('bg-canvas-3d');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 30;
+
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const light1 = new THREE.DirectionalLight(0x2563eb, 1.5);
+  light1.position.set(20, 20, 20);
+  scene.add(light1);
+
+  const light2 = new THREE.DirectionalLight(0x60a5fa, 1.0);
+  light2.position.set(-20, -20, -10);
+  scene.add(light2);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+  const geometries = [
+    new THREE.IcosahedronGeometry(1.5, 0),
+    new THREE.OctahedronGeometry(1.2, 0),
+    new THREE.TorusGeometry(1.2, 0.3, 16, 32),
+    new THREE.TetrahedronGeometry(1.3, 0)
+  ];
+
+  const group = new THREE.Group();
+  const objects = [];
+
+  for (let i = 0; i < 35; i++) {
+    const geom = geometries[i % geometries.length];
+    const mat = new THREE.MeshPhongMaterial({
+      color: 0x3b82f6,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.6
+    });
+
+    const mesh = new THREE.Mesh(geom, mat);
+    mesh.position.set(
+      (Math.random() - 0.5) * 50,
+      (Math.random() - 0.5) * 50,
+      (Math.random() - 0.5) * 30
+    );
+
+    const scale = Math.random() * 0.8 + 0.5;
+    mesh.scale.set(scale, scale, scale);
+
+    group.add(mesh);
+
+    objects.push({
+      mesh: mesh,
+      rotX: (Math.random() - 0.5) * 0.015,
+      rotY: (Math.random() - 0.5) * 0.015
+    });
+  }
+
+  scene.add(group);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    group.rotation.y += 0.002;
+    objects.forEach(item => {
+      item.mesh.rotation.x += item.rotX;
+      item.mesh.rotation.y += item.rotY;
+    });
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teclado & Piano • Aprofundamento do Tema</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+  body {
+    background-color: #000000 !important;
+    color: #ffffff;
+  }
+  #bg-canvas-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: #000000;
+  }
+  .container-detalhado {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .card-painel {
+    background: rgba(18, 18, 18, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 35px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    margin-bottom: 25px;
+  }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #7c3aed;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  }
+  .btn-voltar:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+  }
+  .figura-tema {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .figura-tema svg {
+    max-width: 250px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.6));
+  }
+  h1 {
+    color: #a78bfa;
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+  .subtitulo-tema {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #c4b5fd;
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 6px;
+  }
+  p, li {
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  ul {
+    padding-left: 20px;
+    margin-top: 8px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  .caixa-destaque {
+    background: rgba(124, 58, 237, 0.15);
+    border-left: 4px solid #8b5cf6;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas-3d"></canvas>
+
+<div class="container-detalhado">
+  <a href="index.html" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+
+  <article class="card-painel">
+    <h1>🎹 Teclado e Piano: Teoria, Teclas e Neurociência</h1>
+    <p class="subtitulo-tema">Compreenda a arquitetura visual perfeita das notas e o poder cerebral do teclado.</p>
+
+    <!-- Figura Ilustrativa SVG (Teclado) -->
+    <div class="figura-tema">
+      <svg viewBox="0 0 200 100" width="220" height="110" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="180" height="80" rx="5" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="3"/>
+        <rect x="20" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="40" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="60" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="80" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="100" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="120" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="140" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="160" y="20" width="20" height="60" fill="#ffffff" stroke="#000"/>
+        <rect x="33" y="20" width="12" height="38" fill="#000000"/>
+        <rect x="55" y="20" width="12" height="38" fill="#000000"/>
+        <rect x="95" y="20" width="12" height="38" fill="#000000"/>
+        <rect x="115" y="20" width="12" height="38" fill="#000000"/>
+        <rect x="135" y="20" width="12" height="38" fill="#000000"/>
+      </svg>
+    </div>
+
+    <h2>1. A Estrutura Linear Única</h2>
+    <p>O teclado traz uma vantagem pedagógica incomparável: sua disposição linear visual. Enquanto outros instrumentos escondem as notas em escalas cruzadas, o teclado organiza os sons de forma contínua do tom mais grave (esquerda) ao mais agudo (direita).</p>
+
+    <h2>2. Orientação Visual Pelas Teclas Pretas</h2>
+    <p>As teclas pretas servem como um guia de navegação tátil e visual:</p>
+    <ul>
+      <li><strong>Grupo de 2 teclas pretas:</strong> A tecla branca imediatamente à esquerda da primeira preta é sempre a nota <strong>DÓ (C)</strong>.</li>
+      <li><strong>Grupo de 3 teclas pretas:</strong> A tecla branca imediatamente à esquerda da primeira preta é sempre a nota <strong>FÁ (F)</strong>.</li>
+    </ul>
+
+    <div class="caixa-destaque">
+      <strong>💡 Dica Prática:</strong> Como o som sai limpo com uma pressão suave das pontas dos dedos, o teclado é o instrumento mais confortável para quem busca praticar sem dor muscular.
+    </div>
+
+    <h2>3. Teclado Eletrônico vs. Piano Digital</h2>
+    <ul>
+      <li><strong>Teclado Arranjador:</strong> Leve e compacto, repleto de timbres e ritmos automáticos. Ideal para entretenimento.</li>
+      <li><strong>Piano Digital:</strong> Possui 88 teclas contrapesadas que simulam o peso real dos martelos de um piano de cauda acústico.</li>
+    </ul>
+
+    <h2>4. Ativação dos Dois Hemisférios Cerebrais</h2>
+    <p>Tocar a melodia com a mão direita e o acompanhamento/acordes com a esquerda força os hemisférios esquerdo e direito a comunicarem-se intensamente através do corpo caloso, retardando o envelhecimento cognitivo.</p>
+  </article>
+</div>
+
+<!-- Fundo 3D Geométrico (Three.js) -->
+<script>
+window.addEventListener('load', function() {
+  const canvas = document.getElementById('bg-canvas-3d');
+  if (!canvas || typeof THREE === 'undefined') return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 30;
+
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const light1 = new THREE.DirectionalLight(0x8b5cf6, 1.5);
+  light1.position.set(-20, 20, 20);
+  scene.add(light1);
+
+  const light2 = new THREE.DirectionalLight(0xc4b5fd, 1.0);
+  light2.position.set(20, -20, -10);
+  scene.add(light2);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.3));
+
+  const geometries = [
+    new THREE.BoxGeometry(1.3, 1.3, 1.3),
+    new THREE.TorusKnotGeometry(0.8, 0.25, 64, 8),
+    new THREE.OctahedronGeometry(1.2, 0)
+  ];
+
+  const group = new THREE.Group();
+  const objects = [];
+
+  for (let i = 0; i < 35; i++) {
+    const geom = geometries[i % geometries.length];
+    const mat = new THREE.MeshPhongMaterial({
+      color: 0x8b5cf6,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.6
+    });
+
+    const mesh = new THREE.Mesh(geom, mat);
+    mesh.position.set(
+      (Math.random() - 0.5) * 50,
+      (Math.random() - 0.5) * 50,
+      (Math.random() - 0.5) * 30
+    );
+
+    const scale = Math.random() * 0.8 + 0.5;
+    mesh.scale.set(scale, scale, scale);
+
+    group.add(mesh);
+
+    objects.push({
+      mesh: mesh,
+      rotX: (Math.random() - 0.5) * 0.015,
+      rotY: (Math.random() - 0.5) * 0.015
+    });
+  }
+
+  scene.add(group);
+
+  function animate() {
+    requestAnimationFrame(animate);
+    group.rotation.x += 0.002;
+    objects.forEach(item => {
+      item.mesh.rotation.x += item.rotX;
+      item.mesh.rotation.y += item.rotY;
+    });
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+});
+</script>
+</body>
+</html>
