@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clube da Música • Plataforma Interativa</title>
 <link rel="stylesheet" href="style.css">
-<!-- CDN do Three.js Atualizado -->
+<!-- CDN do Three.js para o Fundo 3D -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
 
-<!-- Canvas do Fundo 3D -->
+<!-- Canvas do Fundo 3D Geométrico -->
 <canvas id="bg-canvas-3d"></canvas>
 
 <!-- Link de Acessibilidade -->
@@ -121,6 +121,9 @@ Seu navegador não suporta este áudio.
 </div>
 </div>
 </details>
+
+<!-- Link de Encaminhamento para Página Secundária -->
+<a href="violao.html" class="btn-navegacao-pagina">🔍 Ver Mais Sobre o Violão</a>
 </article>
 
 <!-- CARD 2: TECLADO -->
@@ -181,6 +184,9 @@ Seu navegador não suporta este áudio.
 </div>
 </div>
 </details>
+
+<!-- Link de Encaminhamento para Página Secundária -->
+<a href="teclado.html" class="btn-navegacao-pagina">🔍 Ver Mais Sobre o Teclado</a>
 </article>
 
 <!-- CARD 3: UKULELE -->
@@ -241,6 +247,9 @@ Seu navegador não suporta este áudio.
 </div>
 </div>
 </details>
+
+<!-- Link de Encaminhamento para Página Secundária -->
+<a href="ukulele.html" class="btn-navegacao-pagina">🔍 Ver Mais Sobre o Ukulele</a>
 </article>
 
 </div>
@@ -333,14 +342,11 @@ Seu navegador não suporta este áudio.
 
 </div>
 
-<!-- SCRIPT 3D REVISADO E RESISTENTE A ERROS -->
+<!-- SCRIPT 3D COM FORMAS GEOMÉTRICAS EM FUNDO PRETO -->
 <script>
 window.addEventListener('load', function() {
   const canvas = document.getElementById('bg-canvas-3d');
-  if (!canvas || typeof THREE === 'undefined') {
-    console.error('Three.js não pôde ser carregado.');
-    return;
-  }
+  if (!canvas || typeof THREE === 'undefined') return;
 
   try {
     const scene = new THREE.Scene();
@@ -351,7 +357,7 @@ window.addEventListener('load', function() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
 
     const light1 = new THREE.DirectionalLight(0x3b82f6, 1.2);
@@ -379,9 +385,9 @@ window.addEventListener('load', function() {
       const geom = geometries[Math.floor(Math.random() * geometries.length)];
       const mat = new THREE.MeshPhongMaterial({
         color: cores[Math.floor(Math.random() * cores.length)],
-        shininess: 80,
+        wireframe: true,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.6
       });
 
       const mesh = new THREE.Mesh(geom, mat);
@@ -439,7 +445,7 @@ window.addEventListener('load', function() {
     });
 
   } catch (e) {
-    console.error("Erro no WebGL: ", e);
+    console.error("Erro WebGL: ", e);
   }
 });
 </script>
